@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #0d1120;
+    --foreground: #ffffff;
+    --panel: #1a2235;
+    --card: #1b263b;
+    --border: #334155;
+    --muted: #64748b;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 md:px-6;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-all duration-200 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-700 text-white hover:bg-slate-600;
+  }
+
+  .panel {
+    @apply bg-panel rounded-lg border border-border/30 p-6 shadow-md;
+  }
+
+  .card {
+    @apply bg-card rounded-lg border border-border/30 p-4;
+  }
+
+  .input {
+    @apply bg-card border border-border rounded-md px-3 py-2 text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+
+  .badge {
+    @apply inline-block px-2 py-1 rounded text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-blue-500/20 text-blue-300;
+  }
+
+  .badge-success {
+    @apply bg-green-500/20 text-green-300;
+  }
+
+  .badge-warning {
+    @apply bg-yellow-500/20 text-yellow-300;
+  }
+
+  .progress-bar {
+    @apply h-2 bg-slate-700 rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-500;
+  }
+
+  .nav-link {
+    @apply px-4 py-2 rounded-md text-sm font-medium transition-colors;
+  }
+
+  .nav-link-active {
+    @apply bg-blue-600 text-white;
+  }
+
+  .nav-link-inactive {
+    @apply text-slate-400 hover:text-white hover:bg-slate-700;
+  }
+
+  .text-xl {
+    @apply text-xl font-semibold;
+  }
+
+  .text-lg {
+    @apply text-lg font-semibold;
+  }
+
+  .text-sm {
+    @apply text-sm text-slate-400;
+  }
+
+  .divider {
+    @apply border-t border-border/30;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  .shadow-glow {
+    @apply shadow-lg shadow-blue-500/20;
+  }
+}
